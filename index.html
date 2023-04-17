@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poor Story', cursive;
+            box-sizing: border-box;
+            margin: 0;
+
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        #main-menu {
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        ul {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        #main-menu li a {
+            /* 한줄에 표현하고도 블록요소 특징도 사용가능
+               블록요소로 지정해야 높이 너비 지정 가능 */
+            display: inline-block;
+            padding: 90px 40px;
+            text-align: center;
+            /* a태그에 적용된 밑줄 없애기 */
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+        }
+
+        #user-menu {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0px;
+            right: 70px;
+        }
+
+        #user-menu li a {
+            display: inline-block;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+
+        }
+
+        .logo-image {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: url("bi bi-airplane-engines") no-repeat;
+            background-size: contain;
+            margin-right: px;
+        }
+
+        .title {
+            text-align: left;
+            padding: 40px;
+            font-size: 60px;
+            position: relative;
+            left: 50px;
+            padding-top: 150px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            display: inline-block;
+        }
+
+        @media(max-width: 600px) {
+            .title {
+                width: 100%;
+            }
+
+            #main-menu {
+                width: 100%;
+                text-align: center;
+                /* main-menu을 가운데로 정렬 */
+            }
+
+            #main-menu li {
+                display: inline-block;
+                float: none;
+                padding: 0 10px;
+            }
+
+        }
+
+        #chatbot {
+            border: 1px solid rgb(0, 0, 0);
+            position: fixed;
+            text-align: center;
+            top: 200px;
+            right: 0;
+            width: 140px;
+            height: 140px;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="user-menu" class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="goLogin()">로그인</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="goSave()">회원가입</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">고객센터</a>
+        </li>
+    </ul>
+    <div class="title">
+        <i class="bi bi-airplane-engines">
+            Happy tour
+        </i>
+    </div>
+
+    <ul id="main-menu">
+        <li>
+            <a href="">패키지 여행</a>
+        </li>
+        <li>
+            <a href="">테마 여행</a>
+        </li>
+        <li>
+            <a href="">개별 여행</a>
+        </li>
+        <li>
+            <a href="">항공권</a>
+        </li>
+        <li>
+            <a href="">호텔</a>
+        </li>
+        <li>
+            <a href="">이벤트</a>
+        </li>
+    </ul>
+    <div id="chatbot">
+        채팅상담
+        <br>
+        <i class="bi bi-chat-left-text"></i>
+    </div>
+
+
+</body>
+<script>
+    const goLogin = () => {
+        location.href = "member_login.html";
+    }
+    const goSave = () => {
+        location.href = "member_join.html";
+    }
+</script>
+
+</html>
