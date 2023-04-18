@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> -->
     <style>
         * {
             font-family: 'Poor Story', cursive;
@@ -119,17 +120,6 @@
             background-size: cover;
 
         }
-
-        .form-row {
-            display: flex;
-            align-items: center;
-        }
-
-        .form-row label,
-        .form-row select,
-        .form-row input {
-            margin-right: 10px;
-        }
     </style>
 </head>
 
@@ -181,29 +171,51 @@
                 <div class="class-and-passenger-container">
                     <div class="passenger-container">
                         <div class="passenger-box">
-                            <p id="passenger-count-display"></p>
-                            <button type="button" onclick="changePassengerCount('adults', -1)">-</button>
-                            <input type="number" id="adults" name="adults" value="0" min="0" readonly>
-                            <button type="button" onclick="changePassengerCount('adults', 1)">+</button><br>
+                            <div class="class-and-passenger-container">
+                                <details open>
+                                    <summary>
+                                        <p id="passenger-count-display">성인 1명</p>
+                                    </summary>
+                                    <div class="panel">
+                                        <div class="passenger-container">
+                                            <div class="passenger-box">
+                                                <button type="button"
+                                                    onclick="changePassengerCount('adults', -1)">-</button>
+                                                <input type="number" id="adults" name="adults" value="1" min="0"
+                                                    readonly>
+                                                <button type="button"
+                                                    onclick="changePassengerCount('adults', 1)">+</button><br>
 
-                            <button type="button" onclick="changePassengerCount('children', -1)">-</button>
-                            <input type="number" id="children" name="children" value="0" min="0" readonly>
-                            <button type="button" onclick="changePassengerCount('children', 1)">+</button><br>
+                                                <button type="button"
+                                                    onclick="changePassengerCount('children', -1)">-</button>
+                                                <input type="number" id="children" name="children" value="0" min="0"
+                                                    readonly>
+                                                <button type="button"
+                                                    onclick="changePassengerCount('children', 1)">+</button><br>
 
-                            <button type="button" onclick="changePassengerCount('infants', -1)">-</button>
-                            <input type="number" id="infants" name="infants" value="0" min="0" readonly>
-                            <button type="button" onclick="changePassengerCount('infants', 1)">+</button>
+                                                <button type="button"
+                                                    onclick="changePassengerCount('infants', -1)">-</button>
+                                                <input type="number" id="infants" name="infants" value="0" min="0"
+                                                    readonly>
+                                                <button type="button"
+                                                    onclick="changePassengerCount('infants', 1)">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="class-select">
+                                            <label for="class-select">클래스 선택:</label>
+                                            <select id="class-select" name="class-select"
+                                                onchange="updateClassDisplay()">
+                                                <option value="economy">이코노미</option>
+                                                <option value="business">비즈니스</option>
+                                                <option value="first">퍼스트 클래스</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="class-select">
-                        <label for="class-select">클래스 선택:</label>
-                        <select id="class-select" name="class-select" onchange="updateClassDisplay()">
-                            <option value="economy">이코노미</option>
-                            <option value="business">비즈니스</option>
-                            <option value="first">퍼스트 클래스</option>
-                        </select>
-                    </div>
                 </div>
 
                 <button type="submit">검색</button>
